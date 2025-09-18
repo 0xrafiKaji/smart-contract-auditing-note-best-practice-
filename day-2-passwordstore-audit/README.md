@@ -35,8 +35,11 @@ My first audit (security review) | PasswordStore Audit
 - Client onboarding: Minimal  
 
 #### V3
-- `cloc` (Count Lines of Code)  
-
+- `cloc` (Count Lines of Code)
+- Cloc >>> csv file for notion:
+```
+cloc . --by-file --csv --quiet | awk 'NR==1{print "language,filename,blank,comment,code"; next} {print}' > scope.csv
+```
 ---
 
 ### 📚 The Tincho Method
