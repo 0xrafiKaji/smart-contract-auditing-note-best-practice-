@@ -57,7 +57,7 @@ if (msg.sender != s_owner) {
 
 ---
 
-#### [M-01] Password Stored in Plaintext On-Chain
+#### [H-02] Password Stored in Plaintext On-Chain
 **Description:**  
 The contract stores `s_password` directly in storage. Ethereum storage is public, so anyone can read the password directly without calling `getPassword()`.  
 
@@ -78,7 +78,7 @@ cast parse-bytes32-string <hex_value>
 
 ---
 
-#### [L-01] Incorrect NatSpec Documentation in `getPassword`
+#### [I-01] Incorrect NatSpec Documentation in `getPassword`
 **Description:**  
 The NatSpec for `getPassword()` includes a `@param` tag for `newPassword`, but the function takes no parameters.  
 
@@ -117,3 +117,74 @@ Remove or correct NatSpec comments so they align with the actual function signat
 - Learned how to structure a **proper Findings Report**.  
 
 ---
+
+## 📌 Foundry cast Cheatsheet (extra )
+
+### ✅ String → Bytes32
+
+```bash
+cast --to-bytes32 "Rafi"
+```
+
+👉 Output: `0x5261666900000000000000000000000000000000000000000000000000000000`
+
+---
+
+### ✅ Bytes32 → String
+
+```bash
+cast parse-bytes32-string 0x5261666900000000000000000000000000000000000000000000000000000000
+```
+
+👉 Output: `Rafi`
+
+---
+
+### ✅ String → Hex (dynamic length, not fixed 32 bytes)
+
+```bash
+cast --to-hex "Rafi"
+```
+
+👉 Output: `0x52616669`
+
+---
+
+### ✅ Hex → String
+
+```bash
+cast --from-utf8 0x52616669
+```
+
+👉 Output: `Rafi`
+
+---
+
+### ✅ Bytes → Hex
+
+```bash
+cast --to-hex "Hello World"
+```
+
+👉 Output: `0x48656c6c6f20576f726c64`
+
+---
+
+### ✅ Hex → Bytes (Human-readable string)
+
+```bash
+cast --from-utf8 0x48656c6c6f20576f726c64
+```
+
+👉 Output: `Hello World`
+
+---
+
+📒 **Remember**:
+
+* `--to-bytes32` → always padding **fixed 32 bytes**.
+* `--to-hex` / `--from-utf8` → for dynamic string encoding/decoding.
+* `parse-bytes32-string` → only for **bytes32 → string**.
+
+---
+
