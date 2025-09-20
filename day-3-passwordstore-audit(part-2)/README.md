@@ -112,8 +112,8 @@ Remove or correct NatSpec comments so they align with the actual function signat
 - Recon isn’t bug hunting → it’s about **understanding intent vs implementation**.  
 - Documented 3 vulnerabilities today:  
   1. Missing Access Control (High)  
-  2. Public Data Exposure (Medium)  
-  3. NatSpec Documentation Bug (Low)  
+  2. Public Data Exposure (High)  
+  3. NatSpec Documentation Bug (Info)  
 - Learned how to structure a **proper Findings Report**.  
 
 ---
