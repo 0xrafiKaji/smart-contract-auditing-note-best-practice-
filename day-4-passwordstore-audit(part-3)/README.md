@@ -20,11 +20,11 @@ Today’s focus: Wrapping up the **PasswordStore Audit** + Writing Findings Repo
    - Anyone can overwrite the password.  
    - ✅ Fix: Add ownership check.
 
-2. **[M-01] Password Stored in Plaintext**  
+2. **[H-01] Password Stored in Plaintext**  
    - Data is publicly visible on-chain.  
    - ✅ Fix: Store hash/encrypted ciphertext.
 
-3. **[L-01] Incorrect NatSpec Docs in `getPassword`**  
+3. **[I-01] Incorrect NatSpec Docs in `getPassword`**  
    - Function docs include invalid `@param`.  
    - ✅ Fix: Correct NatSpec.  
 
@@ -32,7 +32,7 @@ Today’s focus: Wrapping up the **PasswordStore Audit** + Writing Findings Repo
 
 ### 📝 Findings Report
 📂 Full write-up with descriptions, impact, PoCs & mitigations.  
-👉 Full Findings Report: [PasswordStore Audit (Onboarded)](https://github.com/0xrafi-kaji/smart-contract-security-portfolio/blob/main/2025-09-20_PasswordStore_report.pdf)
+👉 Full Findings Report: [PasswordStore Audit Report](https://github.com/0xrafi-kaji/smart-contract-security-portfolio/blob/main/2025-09-20_PasswordStore_report.pdf)
 
 ---
 
