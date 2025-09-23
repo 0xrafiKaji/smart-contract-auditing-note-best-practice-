@@ -33,3 +33,7 @@ Plan → Develop & Test → Audit & Post-Deploy → Deploy → Monitor
 - [Solodit](https://solodit.xyz/)
 
 **Mindset:** Attacker vs Defender = always learning 🧠
+
+# Self audit through this process :
+
+![1000175011](https://github.com/user-attachments/assets/1408b08b-6920-4a70-8310-8d9016d0834d)  [©️ 0xZHD]
