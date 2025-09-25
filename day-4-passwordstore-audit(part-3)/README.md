@@ -36,6 +36,20 @@ Today’s focus: Wrapping up the **PasswordStore Audit** + Writing Findings Repo
 
 ---
 
+### How to generate a PDF audit report
+
+1. Add all your findings to a markdown file like `report.md`
+   1. Add the metadata you see at the top of that file
+2. Install [pandoc](https://pandoc.org/installing.html) & [LaTeX](https://www.latex-project.org/get/)
+   1. You might also have to install [one more package](https://github.com/Wandmalfarbe/pandoc-latex-template/issues/141) if you get `File 'footnotebackref.sty' not found.`
+4. Download `eisvogel.latex` and add to your templates directory (should be `~/.pandoc/templates/`)
+5. Add your logo to the directory as a pdf named `logo.pdf`
+6. Run this command:
+```
+pandoc report.md -o report.pdf --from markdown --template=eisvogel --listings
+```
+---
+
 ### 🚀 Recap
 - Finished my first real audit flow (Scoping → Recon → Vuln ID → Reporting).  
 - Delivered a findings report with **3 vulnerabilities**.  
