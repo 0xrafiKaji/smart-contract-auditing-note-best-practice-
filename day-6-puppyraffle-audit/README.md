@@ -63,3 +63,67 @@ Today’s focus: **Starting a new audit → PuppyRaffle** 🎲🐶
 - Found first potential bug: **DoS via duplicate check loop in enterRaffle**.  
 
 ---
+
+---
+
+# 🛑 How to Identify DoS (Denial of Service) Vulnerabilities in Smart Contracts
+
+1. **Check for Loops (For / While)**
+   - Loops that iterate over **dynamic arrays** (like `players`) are suspicious.  
+   - Gas cost grows with array length → if unbounded, can block execution.  
+
+   Example (PuppyRaffle):
+   ```solidity
+   for (uint256 i = 0; i < players.length; i++) {
+       if (players[i] == newPlayer) revert DuplicateNotAllowed();
+   }
+
+🔍 **Red flag** → `players.length` can grow without limit.
+
+---
+
+2. **Look for External Calls Inside Loops**
+
+   * If a loop performs storage writes or calls external contracts → **DoS risk increases**.
+   * Attackers can force high gas cost or make loop execution fail.
+
+---
+
+3. **Gas Profiling**
+
+   * Run `forge test --gas-report` or check manually with `forge snapshot`.
+   * Track functions whose gas cost grows with input size.
+
+---
+
+4. **Think Like an Attacker**
+
+   * “What if I add 1,000 players before the victim joins?”
+   * Victim’s `enterRaffle()` call will **revert** due to exceeding block gas limit.
+
+---
+
+5. **Proof of Concept**
+
+   * Write a Foundry test that simulates a long `players` array.
+   * Example:
+
+   ```solidity
+   function test_DoS_on_enterRaffle() public {
+       for (uint256 i = 0; i < 1000; i++) {
+           players.push(address(uint160(i+1)));
+       }
+       vm.expectRevert();
+       raffle.enterRaffle(address(0x123)); // should fail due to gas
+   }
+   ```
+
+---
+
+### ✅ Mitigation
+
+* Use **mappings** or **sets** for duplicate checks → O(1) lookup instead of O(n) loop.
+* Avoid unbounded loops inside critical functions.
+* Use events instead of on-chain storage when possible.
+
+---
