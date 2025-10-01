@@ -1,4 +1,4 @@
-# PuppyRaffle Audit (Day 9–11) — Final Findings & Best Practices
+# Day 9–11 of Learning Smart Contract Auditing - (PuppyRaffle Audit) Final Findings & Best Practices
 
 **Repo (course):** [Cyfrin PuppyRaffle Audit](https://github.com/Cyfrin/4-puppy-raffle-audit)  
 **Final Report (my portfolio):** [2025-09-30_PuppyRaffle_report.pdf](https://github.com/0xrafiKaji/smart-contract-security-portfolio/blob/main/2025-09-30_PuppyRaffle_report.pdf)
