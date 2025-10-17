@@ -13,7 +13,7 @@ The goal wasn’t to win — it was to gain **real auditing experience** and und
 - Participated in **CodeHawks’ RaiseBox Faucet** audit contest 🧑‍💻  
 - Reviewed real smart contracts deployed for testing purposes  
 - Performed both **manual analysis** and **tool-assisted scanning**
-- Documented all findings using the standard **Title → Description → Impact → PoC → Recommendation** format  
+- Documented all findings using the standard **TITLE (Root + Impact) → Description → Severity → Risk → Impact → Tools Used → Recommended mitigation → Proof of Concepts(with code)** format  
 - Submitted all issues within the competition deadline
 
 ---
@@ -80,3 +80,4 @@ continuing the **Cyfrin Smart Contract Auditing Course** where I left off after 
 ---
 
 #Web3 #SmartContracts #Auditing #CodeHawks
+
