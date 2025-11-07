@@ -80,4 +80,3 @@ continuing the **Cyfrin Smart Contract Auditing Course** where I left off after 
 ---
 
 #Web3 #SmartContracts #Auditing #CodeHawks
-
